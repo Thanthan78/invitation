@@ -140,7 +140,7 @@
     <div class="container">
         <h1>Will You Be My Valentine? ❤️</h1>
         <button class="btn yes-btn" onclick="sayYes()">Yes</button>
-        <button class="btn no-btn" onmouseover="moveButton()">No</button>
+        <button class="btn no-btn" onmouseover="moveButton()" ontouchstart="disappearButton()">No</button>
         <div id="response" class="hidden">
             Yay! You just made my day! 🎉💕
         </div>
@@ -163,6 +163,13 @@
             noButton.style.position = 'absolute';
             noButton.style.left = randomX + 'px';
             noButton.style.top = randomY + 'px';
+        }
+
+        function disappearButton() {
+            const noButton = document.querySelector('.no-btn');
+            noButton.classList.add('hidden');
+            const yesButton = document.querySelector('.yes-btn');
+            yesButton.innerText = 'Yes 😍';
         }
 
         // Heart animations
